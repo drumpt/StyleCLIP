@@ -1,5 +1,7 @@
-# styleCLIP-pytorch only includes global manipulation among three methods introduced in StyleCLIP
+# styleCLIP-pytorch 
 
+*Only includes global manipulation among three methods introduced in StyleCLIP*
+--------------------------------------------------------------------------------
 This code mostly relies on pytorch implementation of 
 1. Style Space Analysis https://github.com/xrenaa/StyleSpace-pytorch.git 
 2. styleCLIP official implementation [Global Manipulation] https://github.com/orpatashnik/StyleCLIP.git
