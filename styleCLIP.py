@@ -123,21 +123,20 @@ def GetDt(classnames, model):
 
 def GetBoundary(fs3, dt, threshold, style_space=None, style_names=None):
     """
+    Measure cosine similarity of StyleSpace channels and Text representation
+    Filter out similarity lower thatn the threshold
+    Split (6048, ) into corresponding scale using SplitS (to be passed to StyleGAN G)
+    
     fs3: collection of predefined styles (6048, 512)
     dt: Embedding delta text (, 512)
-    
-    ds_imp: deviation of style
-        channelwise style movement * dText
+    return:
+        ds_imp: deviation of style
+            channelwise style movement * dText
+        num_c: number of channels manipulated (number of nonzero elements)
     """
-    tmp=np.dot(fs3,dt) # (6048, )
-    ds_imp=copy.copy(tmp)
-    zeros=np.abs(tmp) < threshold # Select channels that did not exceed threshold
-    num_c=np.sum(~zeros)
-
-    ds_imp[zeros]=0 # deviation of style is set to 0
-
-    tmp=np.abs(ds_imp).max()
-    ds_imp/=tmp # Normalize deviation
+    #! TODO
+    pass
+    
     if style_space is None:
         return ds_imp, num_c
     else:
