@@ -1,4 +1,4 @@
-# styleCLIP-pytorch 
+# StyleCLIP
 
 *Only includes global manipulation among three methods introduced in StyleCLIP*
 --------------------------------------------------------------------------------
